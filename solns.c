@@ -3,30 +3,30 @@
 
  int max(int a[], int n)
 {
-	int max=a[0];
+	int sol=a[0];
 	for(int i=1;i<n;i++)
 	{
-		if(a[i]>max)
+		if(a[i]>sol)
 		{
-			max=a[i];
+			sol=a[i];
 		}
 	}
 	
-	return max;
+	return sol;
 }
 
 int min(int a[], int n)
 {
-	int min=a[0];
+	int ans=a[0];
 	for(int i=1;i<n;i++)
 	{
-		if(a[i]<min)
+		if(a[i]<ans)
 		{
-			min=a[i];
+			ans=a[i];
 		}
 	}
 	
-	return min;
+	return ans;
 }
 
 float average(int a[], int n)
