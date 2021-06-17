@@ -33,27 +33,36 @@ float average(int x[], int n){
   return sum/(float)n;
 }
 
-int mode(int x[], int n){
- int mode=0;
-  int max=0;
- if(n==1){
-  return x[0];
-  }
- 
-      for (int i=0;i<n;i++){
-       int count=0;
-       for(int j=i+1;j<n;j++){
-        if(a[i]==a[j]){
-       count++;
-      }
-      }
- if(count>max){
-  max=count;
-  mode=a[i];
- }
+int mode(int a[], int n)
+{
+	int mode=0,max=0;
+	if(n==1)
+	{
+	return a[0];
+	}
+	
+	for(int i=0;i<n;i++)
+	{	int count =0;
+		for(int j=i+1;j<n;j++)
+		{
+		
+			if(a[i]==a[j])
+			{
+				count++;
+			}
+		}
+		
+		if(count>max)
+		{
+			max=count;
+			mode=a[i];
+		}
+	}
+	
+	return mode;
 }
-   return mode;
-}
+
+
  
  int factors(int n, int x[]){
   int count=0;
