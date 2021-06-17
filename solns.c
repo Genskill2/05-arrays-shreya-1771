@@ -1,66 +1,80 @@
 /* Enter your solutions in this file */
 #include <stdio.h>
 int max(int x[], int n){
- int sol=0;
-  //int n= sizeof(x)/sizeof(x[0]);
-  for (int i=0;i<n;i++){
-    if(x[i]<x[i+1]){
-      sol= x[i+1];
+ int sol=x[0];
+  
+  for (int i=1;i<n;i++){
+    if(x[i]>sol){
+      sol= x[i];
     }
   }
   return sol;
 }
 
 int min(int x[], int n){
-  int ans=0;
-  //int n= sizeof(x)/sizeof(x[0]);
-  for (int i=0;i<n;i++){
-    if(x[i]>x[i+1]){
-      sol= x[i+1];
+  int ans=x[0];
+  
+  for (int i=1;i<n;i++){
+    if(x[i]<ans){
+      ans= x[i];
     }
   }
   return ans;
 }
 
 float average(int x[], int n){
- // int n= sizeof(x)/sizeof(x[0]);
-  float avg=0.0;
-  float sum=0.0;
+ 
+  
+  int sum=0;
   for (int i=0;i<n;i++){
     sum+=x[i];
   }
-  avg= (float)sum/n;
-  return avg;
+  
+  return sum/(float)n;
 }
 
 int mode(int x[], int n){
- int arr[100];
- for (int i=0; i<100; i++{
-  arr[i]=0;
- }
-      for (int i=0;i<n;i++){
-       arr[x[i]]++;
-      }
-      
-      for (int i=0;i<100;i++){
-       if arr[i]>a[i+1]{
-       lar=i;
-      }
-       return lar;
-      }
+ int mode=0;
+  int max=0;
+ if(n==1){
+  return x[0];
+  }
  
- int factors(int a, int x[]){
-  int j=0;
-  for (int i=1;i<a;i++){
+      for (int i=0;i<n;i++){
+       int count=0;
+       for(int j=i+1;j<n;j++){
+        if(a[i]==a[j]){
+       count++;
+      }
+      }
+ if(count>max){
+  max=count;
+  mode=a[i];
+ }
+}
+   return mode;
+}
+ 
+ int factors(int n, int x[]){
+  int count=0;
+  for (int i=1;i<100;i++){
    
-   if (a%i==0){
-    x[j]=i
-     j++;
+   if(n>1){
+    
+    for(int j=2; j<=100;j++){
+     
+   if (n%j==0){
+    
+    x[i]=j;
+     count++;
+    n=n/j;
+    break;
    }
   }
-  int n= sizeof(x)/sizeof(x[0]);
-  for(int i=0; i<n; i++){
-   int count++;
+   }
+   else{
+    break;
+   }
   }
   
   return count;
